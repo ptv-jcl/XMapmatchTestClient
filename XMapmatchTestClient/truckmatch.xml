@@ -4,7 +4,7 @@
   <Routing majorVersion="2" minorVersion="0">
     <Waypoint linkType="ROAD" maximumDistanceToCombinedTransport="100" maximumDistanceToSegment="1000">
       <LinkTypeConfiguration>
-        <Road headingTolerance="360" maximumDistanceForNetworkClass0="1000" maximumNetworkClass="7" minimumNetworkClass="0" onlyReachableRoads="false" />
+        <Road headingTolerance="360" maximumDistanceForNetworkClass0="1000" maximumNetworkClass="7" minimumNetworkClass="0" onlyReachableRoads="true" />
         <Smart checkNetworkClassOnlyForVias="true" maximumDistanceToMainNode="100" maximumDistanceToMainNodeForNetworkClass0="1500" />
         <TollStation maximumDistance="1000" />
         <RoadName maximumDistance="3000" maximumDistanceToMainNode="2000" />
