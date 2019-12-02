@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+  <Common coordinateFormat="OG_GEODECIMAL" language="EN" majorVersion="1" minorVersion="0" />
+  <Routing majorVersion="2" minorVersion="0">
+    <Waypoint linkType="ROAD" maximumDistanceToCombinedTransport="100" maximumDistanceToSegment="1000">
+      <LinkTypeConfiguration>
+        <Road headingTolerance="360" maximumDistanceForNetworkClass0="1000" maximumNetworkClass="7" minimumNetworkClass="0" onlyReachableRoads="false" />
+        <Smart checkNetworkClassOnlyForVias="true" maximumDistanceToMainNode="100" maximumDistanceToMainNodeForNetworkClass0="1500" />
+        <TollStation maximumDistance="1000" />
+        <RoadName maximumDistance="3000" maximumDistanceToMainNode="2000" />
+      </LinkTypeConfiguration>
+    </Waypoint>
+    <Algorithm aStarAggressiveness="1.3" routingAlgorithm="BIDIRECTIONAL_KSTAR">
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="200" />
+      <LevellingScopeByNetworkClass searchSpace="20" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <GeographicRestrictions>
+        <BoundingBox boundingBoxExtension="0" restrictionMode="NONE">
+          <CustomBoundingBox bottom="-89.999" left="-180" right="180" top="90" />
+        </BoundingBox>
+      </GeographicRestrictions>
+    </Algorithm>
+    <Course distanceTimeWeighting="80" enforceShortestRoute="false">
+      <BasicDataRules>
+        <VehicleSpecific>
+          <AuthorizedVehicles turningBanCost="0" />
+          <DeliveryVehicles segmentMalus="0" />
+          <EmergencyVehicles segmentMalus="0" turningBanCost="0" />
+        </VehicleSpecific>
+        <Blockings blockedInWinterMalus="0" blockedMalus="0" blockedTimeDependentMalus="0" oppositeDirectionInOneWayRoadMalus="1000" />
+        <Network rampMalus="10">
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="15" />
+          <MalusByNetworkClass malus="50" />
+          <MalusByNetworkClass malus="100" />
+          <MalusByNetworkClass malus="100" />
+        </Network>
+        <Toll extraTollMalus="0" tollMalus="0" vignetteMalus="0" />
+        <SpecialAreas forbiddenLowEmissionZoneMalus="0" minimumUrbanNetworkClass="2" residentialMalus="0" urbanMalus="0" />
+        <CombinedTransport ferryMalus="0" piggybackMalus="0" />
+      </BasicDataRules>
+      <AdditionalDataRules enabled="false" layerName="">
+        <SegmentSpecific useBlockedForCarsAttribute="true" useBlockedForTrucksAttribute="true" useFerryDuration="true" useFerryLength="true" useRampAttribute="true" useSegmentLength="true" useSpeed="true" useTollForCarsAttribute="true" useTollForTrucksAttribute="true" useUrbanAttribute="true" />
+        <VehicleSpecific enabled="false">
+          <Malus combustibles="0" delivery="0" hazardousGoods="0" hazardousToWaters="0" maintenanceTrucks="0" preferredForHazardousGoods="0" preferredForTrucks="0" residential="0" restrictedTunnel="0" vehiclesWithTrailer="0" />
+        </VehicleSpecific>
+      </AdditionalDataRules>
+      <DynamicRouting dynamicTimeOnStaticRoute="false" layerName="" limitDynamicSpeedToStaticSpeed="true" useFreeFlowSpeed="false" useLegacyDynamic="false">
+        <SpeedMapping baseSpeed="1" mappedSpeed="1" />
+        <SpeedMapping baseSpeed="10" mappedSpeed="10" />
+        <SpeedMapping baseSpeed="20" mappedSpeed="20" />
+        <SpeedMapping baseSpeed="30" mappedSpeed="30" />
+        <SpeedMapping baseSpeed="40" mappedSpeed="40" />
+        <SpeedMapping baseSpeed="50" mappedSpeed="50" />
+        <SpeedMapping baseSpeed="60" mappedSpeed="56" />
+        <SpeedMapping baseSpeed="70" mappedSpeed="61" />
+        <SpeedMapping baseSpeed="80" mappedSpeed="66" />
+        <SpeedMapping baseSpeed="90" mappedSpeed="69" />
+        <SpeedMapping baseSpeed="100" mappedSpeed="72" />
+        <SpeedMapping baseSpeed="110" mappedSpeed="73" />
+        <SpeedMapping baseSpeed="120" mappedSpeed="74" />
+        <SpeedMapping baseSpeed="130" mappedSpeed="75" />
+        <SpeedMapping baseSpeed="140" mappedSpeed="75" />
+        <DynamicTimeStep count="1" size="900" />
+      </DynamicRouting>
+      <Maneuver considerTurningBans="true" uTurnCost="0" />
+      <Violations>
+        <SegmentBlockingViolations cost="0" enabled="true" />
+      </Violations>
+    </Course>
+    <Vehicle>
+      <Physical>
+        <Drive driveType="MOTORIZED">
+          <Emissions emissionClass="EURO_4" emissionTechnology="EXHAUST_GAS_RECIRCULATION" lowEmissionZoneType="GREEN" particleFilterInstalled="false" particleReductionClass="0" />
+          <Engine bioFuelRatio="0" cylinderCapacity="3000" fuelConsumption="30" fuelType="DIESEL" />
+        </Drive>
+        <Weight emptyWeight="15000" loadWeight="0" totalPermittedWeight="40000" />
+        <Axle axleLoad="0" numberOfAxles="3" />
+        <Trailer emptyWeight="0" />
+        <Passenger maximumPermittedNumberOfPassengers="1" />
+        <Dimension height="250" heightAboveFrontAxle="80" length="1200" width="220" />
+      </Physical>
+      <Legal yearOfManufacture="2005">
+        <LegalCondition isAuthorized="true" isDelivery="true" isEmergency="false" isMaintenance="false" isProject="false" />
+      </Legal>
+      <Load hazardousGoodsType="NONE" loadType="GOODS" tunnelRestrictionCode="NONE" />
+      <Speed speedForAirLineDistance="36">
+        <SpeedRangeByNetworkClass maximumSpeed="80" minimumSpeed="55" />
+        <SpeedRangeByNetworkClass maximumSpeed="65" minimumSpeed="30" />
+        <SpeedRangeByNetworkClass maximumSpeed="55" minimumSpeed="23" />
+        <SpeedRangeByNetworkClass maximumSpeed="45" minimumSpeed="20" />
+        <SpeedRangeByNetworkClass maximumSpeed="40" minimumSpeed="18" />
+        <SpeedRangeByNetworkClass maximumSpeed="30" minimumSpeed="15" />
+        <SpeedRangeByNetworkClass maximumSpeed="12" minimumSpeed="7" />
+        <SpeedRangeByNetworkClass maximumSpeed="6" minimumSpeed="4" />
+      </Speed>
+    </Vehicle>
+  </Routing>
+</Profile>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+  <Common coordinateFormat="OG_GEODECIMAL" language="en" majorVersion="1" minorVersion="0"  />
+  <Routing majorVersion="2" minorVersion="0">
+    <Waypoint linkType="ROAD" maximumDistanceToCombinedTransport="100" maximumDistanceToSegment="1000">
+      <LinkTypeConfiguration>
+        <Road headingTolerance="360" maximumDistanceForNetworkClass0="1000" maximumNetworkClass="7" minimumNetworkClass="0" onlyReachableRoads="false" />
+        <Smart checkNetworkClassOnlyForVias="true" maximumDistanceToMainNode="100" maximumDistanceToMainNodeForNetworkClass0="1500" />
+        <TollStation maximumDistance="1000" />
+        <RoadName maximumDistance="3000" maximumDistanceToMainNode="2000" />
+      </LinkTypeConfiguration>
+    </Waypoint>
+    <Algorithm aStarAggressiveness="1.3" routingAlgorithm="BIDIRECTIONAL_KSTAR">
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="-1" />
+      <LevellingScopeByNetworkClass searchSpace="20" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <LevellingScopeByNetworkClass searchSpace="10" />
+      <GeographicRestrictions>
+        <BoundingBox boundingBoxExtension="0" restrictionMode="NONE">
+          <CustomBoundingBox bottom="-89.999" left="-180" right="180" top="90" />
+        </BoundingBox>
+      </GeographicRestrictions>
+    </Algorithm>
+    <Course distanceTimeWeighting="91" enforceShortestRoute="false">
+      <BasicDataRules>
+        <VehicleSpecific>
+          <AuthorizedVehicles turningBanCost="0" />
+          <DeliveryVehicles segmentMalus="0" />
+          <EmergencyVehicles segmentMalus="0" turningBanCost="0" />
+          <ProjectSpecificVehicles blockedSegmentMalus="0" openSegmentMalus="0" turningBanCost="0" />
+        </VehicleSpecific>
+        <Blockings blockedInWinterMalus="0" blockedMalus="2500" blockedTimeDependentMalus="0" oppositeDirectionInOneWayRoadMalus="2500" />
+        <Network rampMalus="10">
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="0" />
+          <MalusByNetworkClass malus="10" />
+          <MalusByNetworkClass malus="20" />
+          <MalusByNetworkClass malus="50" />
+          <MalusByNetworkClass malus="100" />
+          <MalusByNetworkClass malus="100" />
+        </Network>
+        <Toll extraTollMalus="0" tollMalus="0" vignetteMalus="0" />
+        <SpecialAreas forbiddenLowEmissionZoneMalus="0" minimumUrbanNetworkClass="2" residentialMalus="0" urbanMalus="0" />
+        <CombinedTransport ferryMalus="0" piggybackMalus="0" />
+      </BasicDataRules>
+      <AdditionalDataRules enabled="false" layerName="">
+        <SegmentSpecific useBlockedForCarsAttribute="true" useBlockedForTrucksAttribute="true" useFerryDuration="true" useFerryLength="true" useRampAttribute="true" useSegmentLength="true" useSpeed="true" useTollForCarsAttribute="true" useTollForTrucksAttribute="true" useUrbanAttribute="true" />
+        <VehicleSpecific enabled="false">
+          <Malus combustibles="0" delivery="0" hazardousGoods="0" hazardousToWaters="0" maintenanceTrucks="0" preferredForHazardousGoods="0" preferredForTrucks="0" residential="0" restrictedTunnel="0" vehiclesWithTrailer="0" />
+        </VehicleSpecific>
+      </AdditionalDataRules>
+      <Maneuver considerTurningBans="true" uTurnCost="0" />
+      <Violations>
+        <SegmentBlockingViolations cost="5000" enabled="true" />
+      </Violations>
+    </Course>
+    <Vehicle>
+      <Physical>
+        <Drive driveType="MOTORIZED">
+          <Emissions emissionClass="EURO_4" emissionTechnology="NONE" lowEmissionZoneType="GREEN" particleFilterInstalled="false" particleReductionClass="0" />
+          <Engine bioFuelRatio="0" cylinderCapacity="1600" fuelConsumption="5" fuelType="DIESEL" />
+        </Drive>
+        <Weight emptyWeight="1250" loadWeight="0" totalPermittedWeight="1500" />
+        <Axle axleLoad="0" numberOfAxles="2" />
+        <Trailer emptyWeight="0" />
+        <Passenger maximumPermittedNumberOfPassengers="1" />
+        <Dimension height="150" heightAboveFrontAxle="80" length="450" width="180" />
+      </Physical>
+      <Legal yearOfManufacture="2014">
+        <LegalCondition isAuthorized="true" isDelivery="true" isEmergency="true" isMaintenance="true" isProject="true" />
+      </Legal>
+      <Load hazardousGoodsType="NONE" loadType="MIXED" tunnelRestrictionCode="NONE" />
+      <Speed speedForAirLineDistance="36">
+        <SpeedRangeByNetworkClass maximumSpeed="135" minimumSpeed="70" />
+        <SpeedRangeByNetworkClass maximumSpeed="125" minimumSpeed="35" />
+        <SpeedRangeByNetworkClass maximumSpeed="85" minimumSpeed="25" />
+        <SpeedRangeByNetworkClass maximumSpeed="60" minimumSpeed="25" />
+        <SpeedRangeByNetworkClass maximumSpeed="50" minimumSpeed="20" />
+        <SpeedRangeByNetworkClass maximumSpeed="40" minimumSpeed="18" />
+        <SpeedRangeByNetworkClass maximumSpeed="16" minimumSpeed="9" />
+        <SpeedRangeByNetworkClass maximumSpeed="6" minimumSpeed="4" />
+      </Speed>
+    </Vehicle>
+  </Routing>
+</Profile>

@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XMapmatchTestClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HereAppId" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HereAppCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Token" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="XMapProfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">silkysand</Value>
+    </Setting>
+    <Setting Name="XMapUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:50010/xmap/ws/XMap</Value>
+    </Setting>
+    <Setting Name="XRouteProfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$carmatch</Value>
+    </Setting>
+    <Setting Name="XRouteUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:50030/xroute/ws/XRoute</Value>
+    </Setting>
+    <Setting Name="XMapmatchProfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">local-matching</Value>
+    </Setting>
+    <Setting Name="XMapmatchUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:50040/xmapmatch/ws/XMapmatch</Value>
+    </Setting>
+    <Setting Name="XLocateProfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">default</Value>
+    </Setting>
+    <Setting Name="XLocateUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:50020/xlocate/ws/XLocate</Value>
+    </Setting>
+    <Setting Name="ProxyUri" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
