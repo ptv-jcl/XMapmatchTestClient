@@ -144,6 +144,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="XMapmatchTestClient.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -154,6 +155,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
+    <Content Include="Ptv.Components.Projections.dll" />
+    <Content Include="Ptv.Components.Projections.xml" />
+    <Content Include="Ptv.XServer.Controls.Map.dll" />
+    <Content Include="Ptv.XServer.Controls.Map.xml" />
     <Content Include="PtvLib\Ptv.Components.Projections.dll" />
     <Content Include="PtvLib\Ptv.Components.Projections.xml" />
     <Content Include="PtvLib\Ptv.XServer.Controls.Map.dll" />
@@ -162,6 +167,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="XMapmatchTestClient.exe" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
