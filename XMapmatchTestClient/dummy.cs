@@ -40,5 +40,6 @@ namespace XServer
             }
             return waypointDescs;
         }
+
     }
 }
