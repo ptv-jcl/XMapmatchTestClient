@@ -138,6 +138,27 @@
   <metadata name="dataPointBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>347, 17</value>
   </metadata>
+  <metadata name="ResultAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CoveredDistance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DrivenDistance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="VendorId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Stable.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LocalMatching.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataPointBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>347, 17</value>
+  </metadata>
   <assembly alias="WindowsBase" name="WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
   <data name="mapView.Center" type="System.Windows.Point, WindowsBase">
     <value>-44.20562837689,68.4424269465564</value>
@@ -148,6 +169,9 @@
   <data name="explanationLbl.Text" xml:space="preserve">
     <value>Choose either "Load Data from CSV" or  Load data from Request" to load input data. Then choose Match Data to match the track. "Load data from CSV" read a CSV file. Hover over the options to the rigth to see how you can influence the CSV parsing behavior. The exspected layout is  &lt;id&gt;;&lt;lat&gt;;&lt;lon&gt;;&lt;speed&gt;;&lt;heading&gt;;&lt;timestamp&gt; . If heading is missing or 0 the client will calculated it mathimatically. "Load data from Request" reads a xml file with a valid xMapmatch request. Currently the use of TrackPosition.coordinate is not yet supported by the program.</value>
   </data>
+  <metadata name="mainFormToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>200, 17</value>
+  </metadata>
   <data name="routeSanityCheckCheckBox.ToolTip" xml:space="preserve">
     <value>If checked after matching but befor sending the results to xRoute, an additional check will be done. This check will filter out situations witch are know to be possible bad matches. This is usefull when you are using local-matching profiles when you hvae very sparse signals.
 </value>

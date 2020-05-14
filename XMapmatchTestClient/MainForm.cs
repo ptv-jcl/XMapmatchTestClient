@@ -168,14 +168,9 @@ namespace XMapmatchTestClient
                 if (csvHeaderChckBx.Checked)
                     streamReader.ReadLine();
 
-                while (true)
+                while (cancel == false && streamReader.Peek() != -1)
                 {
-                    if (cancel)
-                    {
-                        break;
-                    }
                     line = streamReader.ReadLine();
-                    if (line == null) break;
                     lineCount++;
                     if (commaSeparatorChckBx.Checked)
                         line = line.Replace(',', ';');
@@ -410,7 +405,7 @@ namespace XMapmatchTestClient
                                         break;
                                     default:
                                         break;
-                                        //throw new NotSupportedException("Only OG_GEODEICMAL and PTV_GEODECIMAL are currently support by this tool.");
+                                        //throw new NotSupportedException("Only OG_GEODECIMAL and PTV_GEODECIMAL are currently support by this tool.");
                                 }
                             }
                         }
@@ -438,6 +433,15 @@ namespace XMapmatchTestClient
                 foreach (var dataPoint in dataPoints)
                 {
                     dataPointList.Add(dataPoint);
+                }
+
+                if (recalculateHeadingChkBx.Checked)
+                {
+                    for (int i = 0; i < dataPointList.Count - 1; i++)
+                    {
+                        dataPointList[i].SetHeading(CalculateHeading(dataPointList[i], dataPointList[i + 1]));
+                    }
+                    dataPointList.Last().SetHeading(dataPointList[dataPointList.Count - 2].Heading);
                 }
 
                 if (makeOwnTimestampChkBx.Checked) RedoTimeStamps();
@@ -991,9 +995,14 @@ namespace XMapmatchTestClient
 
         private float CalculateHeading(DataPoint start, DataPoint end)
         {
+            return CalculateHeading(start.LonInput, start.LatInput, end.LonInput, end.LatInput);
+        }
+
+        private float CalculateHeading(double startX, double startY, double endX, double endY)
+        {
             //officaly i should convert to lineair coordinate projection like mercator, but for now we stick to geodecimal because the error is small on small coordinate differences
 
-            float angle = (float)((180 / Math.PI) * Math.Atan2(end.LonInput - start.LonInput, end.LatInput - start.LatInput));
+            float angle = (float)((180 / Math.PI) * Math.Atan2(endX - startX, endY - startY));
             if (angle < 0) angle += 360;
             if (angle == 360) angle = 0;
             return angle;
@@ -1152,6 +1161,7 @@ namespace XMapmatchTestClient
                 // calculate the airline distance and mutiply it with 1.34 to take into account that routes usually are not following the airline
                 // note the factor 1.34 is determined by measurement donw by PTV in the past on this topic and is a good average value factor
                 var dist = Geotools.AirLineDistanceCalculator.CalculateUsingWGS84(begin, end) * 1.34;
+                //var speed = 80;
                 var speed = (dataPointList[i].SpeedInMps + dataPointList[i + 1].SpeedInMps) / 2;
                 // make sure to add always at least a single second because xMapmatch demand the timestamps are increasing
                 dataPointList[i + 1].TrackPosition.timestamp =

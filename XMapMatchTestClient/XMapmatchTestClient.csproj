@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataPoint.cs" />
+    <Compile Include="dummy.cs" />
     <Compile Include="EmmissionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
